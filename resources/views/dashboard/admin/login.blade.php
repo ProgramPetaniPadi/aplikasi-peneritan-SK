@@ -1,40 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
+    <title>Login Admin Kepegawaian</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ url('css/style.css') }}" rel="stylesheet">
 </head>
-<body style="background-color:#c8d9e8 !important">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 offset-md-4" style="margin-top: 45px">
-                 <h4>Admin Login</h4><hr>
-                 <form action="{{ route('admin.check') }}" method="post">
-                    @if (Session::get('fail'))
-                        <div class="alert alert-danger">
-                            {{ Session::get('fail') }}
+
+<body class="img js-fullheight" style="background-image: url('../images/background.jpg');">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center mb-5">
+                    <img src="{{ url('images/logo.png')}}" height="200px" width="200px;">
+                    <h2 class="heading-section">KEPEGAWAIAN POLITEKNIK NEGERI SAMBAS</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        @if(session('fail'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{session('fail')}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                    @endif
-                    @csrf
-                     <div class="form-group">
-                         <label for="email">Email</label>
-                         <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
-                         <span class="text-danger">@error('email'){{ $message }}@enderror</span>
-                     </div>
-                     <div class="form-group">
-                         <label for="password">Password</label>
-                         <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">
-                         <span class="text-danger">@error('password'){{ $message }}@enderror</span>
-                     </div>
-                     <div class="form-group">
-                         <button type="submit" class="btn btn-primary">Login</button>
-                     </div>
-                 </form>
+                        @endif
+                        <form action="{{ route('admin.check') }}" method="post" class="signin-form">
+                            @csrf
+                            <div class="form-group">
+                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input id="password-field" name="password" type="password" class="form-control"
+                                    placeholder="Password" value="{{ old('password') }}" required>
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password "></span>
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">
+                                    {{ __('Login') }}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <script src="{{ url('js/jquery.min.js')}}"></script>
+    <script src="{{ url('js/popper.js')}}"></script>
+    <script src="{{ url('js/bootstrap.min.js')}}"></script>
+    <script src="{{ url('js/main.js')}}"></script>
+
 </body>
+
 </html>
