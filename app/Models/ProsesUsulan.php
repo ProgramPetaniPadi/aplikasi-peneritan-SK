@@ -14,12 +14,9 @@ class ProsesUsulan extends Model
         'nama_unit',
         'judul_usulan',
         'document',
-        'buk_persuratan',
-        'seketaris_direktur',
-        'direktur',
-        'seketaris_direktur2',
-        'wadir2',
-        'buk_persuratan_sk'
+        'lampiran',
+        'disposisi',
+        'wadir2'
     ];
 
     public function dataunit()

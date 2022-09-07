@@ -11,7 +11,6 @@ use App\Models\ProsesUsulan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Session;
-
 class UserController extends Controller
 {
     public function index()
@@ -21,7 +20,6 @@ class UserController extends Controller
         return view('dashboard.user.home', [
             'item' => $item,
             'dataunit' => $dataunit,
-
         ]);
     }
     public function show(Request $request, $id)
@@ -45,7 +43,6 @@ class UserController extends Controller
             'item' => $item
         ]);
     }
-
     public function prosesseketarisdirektur(Request $request, $id)
     {
         $item = ProsesUsulan::findOrFail($id);
@@ -57,6 +54,13 @@ class UserController extends Controller
     {
         $item = ProsesUsulan::findOrFail($id);
         return view('dashboard.user.show.showseketeris', [
+            'item' => $item
+        ]);
+    }
+    public function showseketaris2(Request $request, $id)
+    {
+        $item = ProsesUsulan::findOrFail($id);
+        return view('dashboard.user.show.showseketeris2', [
             'item' => $item
         ]);
     }
@@ -74,10 +78,24 @@ class UserController extends Controller
             'item' => $item
         ]);
     }
+    public function showdirektur(Request $request, $id)
+    {
+        $item = ProsesUsulan::findOrFail($id);
+        return view('dashboard.user.show.showdirektur', [
+            'item' => $item
+        ]);
+    }
     public function proseswadir(Request $request, $id)
     {
         $item = ProsesUsulan::findOrFail($id);
         return view('dashboard.user.proses.proseswadir', [
+            'item' => $item
+        ]);
+    }
+    public function showwadir(Request $request, $id)
+    {
+        $item = ProsesUsulan::findOrFail($id);
+        return view('dashboard.user.show.showwadir', [
             'item' => $item
         ]);
     }
@@ -88,10 +106,24 @@ class UserController extends Controller
             'item' => $item
         ]);
     }
+    public function showpenerbitansk(Request $request, $id)
+    {
+        $item = ProsesUsulan::findOrFail($id);
+        return view('dashboard.user.show.showpenerbitansk', [
+            'item' => $item
+        ]);
+    }
     public function proseskoordinator(Request $request, $id)
     {
         $item = ProsesUsulan::findOrFail($id);
         return view('dashboard.user.proses.proseskoordinator', [
+            'item' => $item
+        ]);
+    }
+    public function showkoordinator(Request $request, $id)
+    {
+        $item = ProsesUsulan::findOrFail($id);
+        return view('dashboard.user.show.showkoordinator', [
             'item' => $item
         ]);
     }
@@ -108,7 +140,6 @@ class UserController extends Controller
         $save = $data->save();
         if ($save) {
             return redirect()->back()->with('success', 'You are now rcreated successfully as datadosen');
-
         }
         else {
             return redirect()->back()->with('fail', 'Something went Wrong, failed to create');
@@ -183,7 +214,6 @@ class UserController extends Controller
         $save = $data->save();
         if ($save) {
             return redirect()->back()->with('success', 'You are now rcreated successfully as datadosen');
-
         }
         else {
             return redirect()->back()->with('fail', 'Something went Wrong, failed to create');
@@ -209,8 +239,6 @@ class UserController extends Controller
             return redirect()->back()->with('fail', 'Something went Wrong, failed to create');
         }
     }
-
-
     public function updatekoordinator(Request $request, $id)
     {
         $data = ProsesUsulan::findOrFail($id);
@@ -224,7 +252,6 @@ class UserController extends Controller
         $save = $data->save();
         if ($save) {
             return redirect()->back()->with('success', 'You are now rcreated successfully as datadosen');
-
         }
         else {
             return redirect()->back()->with('fail', 'Something went Wrong, failed to create');

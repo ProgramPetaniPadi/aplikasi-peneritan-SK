@@ -19,14 +19,11 @@ class Authenticate extends Middleware
             if ($request->routeIs('admin.*')) {
                 return route('admin.login');
             }
-            if ($request->routeIs('dosen.*')) {
-                return route('dosen.login');
-            }
-            if ($request->routeIs('tendik.*')) {
-                return route('tendik.login');
+            if ($request->routeIs('Unit.*')) {
+                return route('Unit.login');
             }
 
-            return route('user.login');
+            return route('/');
         }
     }
 }

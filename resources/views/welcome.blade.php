@@ -1,160 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+    <title>Login Kepegawaian</title>
     <meta charset="utf-8">
-    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>Halaman Login Kepegawaian POLTESA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="{{ url('backend/css1/style.css') }}" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="{{ url('css/style.css') }}" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="img js-fullheight" style="background-image: url('../images/background.jpg');">
+    <section class="ftco-section">
 
-    <div class="content">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-4"><a href="#" class="btn btn-custom waves-effect waves-light mb-4"
-                        data-animation="fadein" data-plugin="custommodal" data-overlayspeed="200"
-                        data-overlaycolor="#36404a"><i class="mdi mdi-plus"></i> Login</a></div>
-                <!-- end col -->
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center mb-5">
+                    <img src="{{ url('images/logo.png')}}" height="200px" width="200px;">
+                    <h2 class="heading-section">KEPEGAWAIAN POLITEKNIK NEGERI SAMBAS</h2>
+                </div>
             </div>
-            <!-- end row -->
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="text-center card-box">
-                        <div class="member-card pt-2 pb-5">
-                            <div class="thumb-lg member-thumb mx-auto"><img
-                                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                    class="rounded-circle img-thumbnail" alt="profile-image"></div>
-                            <div class="">
-                                <h4>DOSEN</h4>
-                                <p class="text-muted">@Dosen <span>| </span>
-                                    <span><a href="#" class="text-pink">pastikan
-                                            sudah punya akun</a></span>
-                                </p>
-                            </div>
-                            <ul class="social-links list-inline">
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Facebook"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Twitter"><i
-                                            class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Skype"><i
-                                            class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <button type="button"
-                                class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light"> <a
-                                    class="text-white" href="{{ route('Dosen.login') }}">LOGIN</a> </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- end col -->
-                <div class="col-lg-3">
-                    <div class="text-center card-box">
-                        <div class="member-card pt-2 pb-5">
-                            <div class="thumb-lg member-thumb mx-auto"><img
-                                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                    class="rounded-circle img-thumbnail" alt="profile-image"></div>
-                            <div class="">
-                                <h4>TENDIK</h4>
-                                <p class="text-muted">@Tendik <span>| </span><span><a href="#"
-                                            class="text-pink">pastikan sudah punya akun</a></span></p>
-                            </div>
-                            <ul class="social-links list-inline">
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Facebook"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Twitter"><i
-                                            class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Skype"><i
-                                            class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <button type="button"
-                                class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light"> <a
-                                    class="text-white" href="{{ route('Tendik.login') }}">LOGIN</a> </button>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
 
-                        </div>
-                    </div>
-                </div>
-                <!-- end col -->
-                <div class="col-lg-3">
-                    <div class="text-center card-box">
-                        <div class="member-card pt-2 pb-4">
-                            <div class="thumb-lg member-thumb mx-auto"><img
-                                    src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                                    class="rounded-circle img-thumbnail" alt="profile-image"></div>
-                            <div class="">
-                                <h4>UNIT PENGAJUAN SURAT ATAU SK</h4>
-                                <p class="text-muted">@Unit <span>| </span><span><a href="#" class="text-pink">pastikan
-                                            sudah punya akun</a></span></p>
-                            </div>
-                            <ul class="social-links list-inline">
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Facebook"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Twitter"><i
-                                            class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Skype"><i
-                                            class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <button type="button"
-                                class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light"> <a
-                                    class="text-white" href="{{ route('Unit.login') }}">LOGIN</a> </button>
+                        <form action="{{ route('Unit.check') }}" method="post" class="signin-form">
 
-                        </div>
-                    </div>
-                </div>
-                <!-- end col -->
-                <div class="col-lg-3">
-                    <div class="text-center card-box">
-                        <div class="member-card pt-2 pb-4">
-                            <div class="thumb-lg member-thumb mx-auto"><img
-                                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                    class="rounded-circle img-thumbnail" alt="profile-image"></div>
-                            <div class="">
-                                <h4>PROSES PENGUSULAN SURAT ATAU SK</h4>
-                                <p class="text-muted">@Users <span>| </span><span><a href="#" class="text-pink">pastikan
-                                            sudah punya akun</a></span></p>
+                            @csrf
+                            <div class="form-group">
+                                <input id="nip" type="text" class="form-control @error('nip') is-invalid @enderror"
+                                    name="nip" value="{{ old('nip') }}" placeholder="Nomor Induk Pegawai" required
+                                    autofocus>
+                                @error('nip')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
-                            <ul class="social-links list-inline">
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Facebook"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Twitter"><i
-                                            class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip"
-                                        class="tooltips" href="" data-original-title="Skype"><i
-                                            class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <button type="button"
-                                class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light"> <a
-                                    class="text-white" href="{{ route('user.login') }}">LOGIN</a> </button>
+                            <div class="form-group">
+                                <input id="password-field" name="password" type="password" class="form-control"
+                                    placeholder="Password" value="{{ old('password') }}" required>
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password "></span>
 
-                        </div>
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">
+                                    {{ __('Login') }}
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
         </div>
-        <!-- container -->
-    </div>
+    </section>
 
+    <script src="{{ url('js/jquery.min.js')}}"></script>
+    <script src="{{ url('js/popper.js')}}"></script>
+    <script src="{{ url('js/bootstrap.min.js')}}"></script>
+    <script src="{{ url('js/main.js')}}"></script>
 
-    <script type="text/javascript">
-    </script>
 </body>
 
 </html>

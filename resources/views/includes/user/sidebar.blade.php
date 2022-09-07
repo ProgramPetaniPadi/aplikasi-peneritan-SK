@@ -15,7 +15,6 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
-
     <li class="nav-item {{ request()->is('user/proses') || request()->is('user/selesai')  ?'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapmasteruser"
             aria-expanded="true" aria-controls="collapmasteruser">

@@ -5,11 +5,25 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
+
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">PROSES SURAT USULAN</h1>
-        <a href="{{ Route('Unit.create') }}" class="btn btn-sm btn-success shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Surat
-        </a>
+        <div class="dropdown">
+            <button class="btn btn-sm btn-success shadow-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tambah Surat Usulan
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button type="button" class="dropdown-item"> <a class="btn btn-success"
+                        href="{{ route('Unit.printsurat') }}">Beban
+                        Mengajar</a></button>
+                <button type="button" class="dropdown-item"> <a class="btn btn-success"
+                        href="{{ Route('Unit.create') }}">surat usulan lainnya</a></button>
+                <button type="button" class="dropdown-item"> <a class="btn btn-success"
+                        href="{{ Route('Unit.create') }}">Beban
+                        Mengajar</a></button>
+            </div>
+        </div>
     </div>
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -29,12 +43,8 @@
                             <th>NAMA UNIT</th>
                             <th>USULAN SURAT </th>
                             <th>BUK PERSURATAN </th>
-                            <th>SEKETARIS DIREKTUR</th>
-                            <th>DIREKTUR</th>
-                            <th>SEKETARIS DIREKTUR</th>
-                            <th>WADIR II</th>
-                            <th>KOORDINATOR</th>
-                            <th>BUK PERSURATAN / SK</th>
+                            <th>DOCUMENT SK</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
 
@@ -44,8 +54,6 @@
                         $i = 1;
                         ?>
                         @forelse ($item as $item)
-
-
                         @if (Auth::user()->unit==$item->nama_unit)
                         <tr>
                             <td>{{ $i++ }}</td>
@@ -60,49 +68,24 @@
                                 @endif
                             </td>
                             <td>
-                                @if($item->seketaris_direktur == "0")
+                                @if($item->documentSK == "0")
                                 <a href="#" class="btn btn-warning">Proses</a>
                                 @else
-                                <a href="#" class="btn btn-success align-content-center">Selesai</a>
+                                <a href="{{ route('Unit.showpenerbitsk', $item->id) }}"
+                                    class="btn btn-success ">Selesai</a>
                                 @endif
                             </td>
                             <td>
-                                @if($item->direktur == "0")
-                                <a href="#" class="btn btn-warning">Proses</a>
-                                @else
-                                <a href="#" class="btn btn-success align-content-center">Selesai</a>
-                                @endif
-                            </td>
-                            <td>
-                                @if($item->seketaris_direktur2 == "0")
-                                <a href="#" class="btn btn-warning">Proses</a>
-                                @else
-                                <a href="#" class="btn btn-success align-content-center">Selesai</a>
-                                @endif
-                            </td>
-                            <td>
-                                @if($item->wadir2 == "0")
-                                <a href="#" class="btn btn-warning">Proses</a>
-                                @else
-                                <a href="#" class="btn btn-success align-content-center">Selesai</a>
-                                @endif
-                            </td>
-                            <td>
-                                @if($item->koordinator == "0")
-                                <a href="#" class="btn btn-warning">Proses</a>
-                                @else
-                                <a href="#" class="btn btn-success align-content-center">Selesai</a>
-                                @endif
-                            </td>
-                            <td>
-                                @if($item->buk_persuratan_sk == "0")
-                                <a href="#" class="btn btn-warning">Proses</a>
-                                @else
-                                <a href="#" class="btn btn-success align-content-center">Selesai</a>
-                                @endif
+                                <form action="{{ route('Unit.destroy', $item->id) }}" method="get" class="d-inline"
+                                    onclick="return confirm('Yakin ingin menghapus?');">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
-
 
                         @endif
                         @endforeach

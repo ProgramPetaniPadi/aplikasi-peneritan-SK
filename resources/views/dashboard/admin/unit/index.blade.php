@@ -6,7 +6,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">DATA UNIT SURAT USULAN</h1>
+        <h1 class="h3 mb-0 text-gray-800">DATA USER </h1>
         <a href="{{ route('admin.create|unit')}}" class="btn btn-sm btn-success shadow-sm">
             <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Unit
         </a>
@@ -24,18 +24,17 @@
             </div>
             @endif
             <div class="table-responsive">
-                <table class="table table-dark" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>NO</th>
-                            <th>NAMA</th>
-                            <th>NO HANDPHONE </th>
-                            <th>NIP</th>
-                            <th>NAMA UNIT</th>
-                            <th>ACTION</th>
+                            <td>NO</td>
+                            <td>NAMA</td>
+                            <td>NO HANDPHONE </td>
+                            <td>NIP</td>
+                            <td>JABATAN FUNGSIONAL</td>
+                            <td>ACTION</td>
                         </tr>
                     </thead>
-
                     <tbody>
                         <?php
                         $i = 1;
@@ -46,7 +45,7 @@
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->phone }}</td>
                             <td>{{ $item->nip }}</td>
-                            <td>{{ $item->unit }}</td>
+                            <td>{{ $item->jabatan_fungsional }}</td>
                             <td><a href="#" class="btn btn-info">
                                     <i class="fa fa-pencil-alt"></i> </a>
                                 <form action="{{ route('admin.destroy|unit', $item->id) }}" method="get"

@@ -20,9 +20,9 @@
                         <div class="col mr-2">
 
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                <a class="collapse-item" href="#">Sudah Selesai Diproses</a>
+                                <a class="collapse-item" href="#">Usulan Surat Tugas Beban Mengajar Dosen</a>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ $items }}</div>
                         </div>
                         <div class="col-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -45,9 +45,9 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                <a class="collapse-item" href="#">Usulan Sedang Proses</a>
+                                <a class="collapse-item" href="#">Usulan SK Beban Mengajar</a>
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $item }} </div>
                         </div>
                         <div class="col-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -65,14 +65,7 @@
 
 
     </div>
-    @forelse ($item as $item)
-    @empty
-    <tr>
-        <td colspan="3" class="text-center">
-            Tidak Ada Data
-        </td>
-    </tr>
-    @endforelse
+
 
 </div>
 

@@ -23,7 +23,7 @@ class Dataunit extends Authenticatable
         'phone',
         'email',
         'password',
-        'unit'
+        'jabatan_fungsional'
     ];
     public function prosesusulan()
     {

@@ -21,14 +21,7 @@ return [
         'driver' => 'eloquent',
         'model' => App\Models\Admin::class ,
     ],
-    'Tendik' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\Datatendik::class ,
-    ],
-    'Dosen' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\Datadosen::class ,
-    ],
+
     'Unit' => [
         'driver' => 'eloquent',
         'model' => App\Models\Dataunit::class ,
@@ -65,14 +58,6 @@ return [
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
-        ],
-        'Tendik' => [
-            'driver' => 'session',
-            'provider' => 'datatendiks',
-        ],
-        'Dosen' => [
-            'driver' => 'session',
-            'provider' => 'datadosens',
         ],
         'Unit' => [
             'driver' => 'session',
@@ -111,14 +96,6 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class ,
         ],
-        'datatendiks' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Datatendik::class ,
-        ],
-        'datadosens' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Datadosen::class ,
-        ],
         'unitsk' => [
             'driver' => 'eloquent',
             'model' => App\Models\Dataunit::class ,
@@ -150,14 +127,6 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class ,
-        ],
-        'datatendiks' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Datatendik::class ,
-        ],
-        'datadosens' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Datadosen::class ,
         ],
         'unitsk' => [
             'driver' => 'eloquent',

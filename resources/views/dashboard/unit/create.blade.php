@@ -34,6 +34,8 @@
                         required="required">
                     <label for="document">SURAT</label>
                     <input type="file" class="form-control" name="document" placeholder="document" required="required">
+                    <label for="lampiran">LAMPIRAN </label>
+                    <input type="file" class="form-control" name="lampiran" placeholder="lampiran" required="required">
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Simpan Data</button>
                     </div>

@@ -39,8 +39,16 @@
                     <input type="nip" class="form-control" name="nip" placeholder="nip" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="unit">NAMA UNIT</label>
-                    <input type="text" class="form-control" name="unit" placeholder="Nama unit" required="required">
+                    <label for="jabatan_fungsional">JABATAN FUNGSIONAL</label>
+                    <select name="jabatan_fungsional" id="jabatan_fungsional" class="form-control">
+                        <option value="">...Pilih Jabatan...</option>
+                        <option value="DIREKTUR">DIREKTUR</option>
+                        <option value="WADIR"> WADIR</option>
+                        <option value="KOORDINATOR">KOORDINATOR</option>
+                        <option value="STAFF UMUM">STAFF UMUM</option>
+                        <option value="STAFF PRODI">STAFF PRODI</option>
+                        <option value="KAP PRODI">KAP PRODI</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Simpan Data</button>
